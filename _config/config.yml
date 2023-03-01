@@ -1,0 +1,19 @@
+---
+Name: webp-formatter
+After:
+  - '#assetsflysystem'
+  - '#assetsimage'
+---
+SilverStripe\Assets\Storage\DBFile:
+  extensions:
+    - Bigfork\SilverstripeWebpFormatter\Extensions\ImageExtension
+SilverStripe\Assets\Image:
+  extensions:
+    - Bigfork\SilverstripeWebpFormatter\Extensions\ImageExtension
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Assets\FilenameParsing\HashFileIDHelper:
+    class: Bigfork\SilverstripeWebpFormatter\FilenameParsing\HashFileIDHelper
+  SilverStripe\Assets\FilenameParsing\NaturalFileIDHelper:
+    class: Bigfork\SilverstripeWebpFormatter\FilenameParsing\NaturalFileIDHelper
+  SilverStripe\Assets\Image_Backend:
+    class: Bigfork\SilverstripeWebpFormatter\InterventionBackend
