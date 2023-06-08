@@ -9,7 +9,7 @@ use SilverStripe\Core\Extension;
 
 class ImageExtension extends Extension
 {
-    public function Webp(): AssetContainer
+    public function Webp(): ?AssetContainer
     {
         $pathParts = pathinfo($this->owner->getFilename());
         $variant = $this->owner->variantName(HashFileIDHelper::getExtensionRewriteVariant(), $pathParts['extension'], 'webp');
