@@ -46,7 +46,7 @@ trait AlternativeFileExtensionTrait
      * @param int $extIndex Wether we want the original extension (0) or the new extension (1)
      * @return string
      */
-    private function swapExtension(
+    protected function swapExtension(
         string $filename,
         string $variant,
         int $extIndex
